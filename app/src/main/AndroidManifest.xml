@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.zlm.hp.ui">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 存储权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- 显示悬浮窗口权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <!-- ssid -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- 动态广播自定义权限 -->
+    <uses-permission android:name="com.zlm.hp.permissions.RECEIVER" />
+
+    <permission
+        android:name="com.zlm.hp.permissions.RECEIVER"
+        android:protectionLevel="signature" />
+
+    <application
+        android:name="com.zlm.hp.application.HPApplication"
+        android:allowBackup="false"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <!-- 支持全面屏 -->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1" />
+
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".HelpActivity" />
+
+        <service android:name="com.zlm.hp.service.AudioPlayerService" />
+
+        <activity
+            android:name=".LrcActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation" />
+        <activity android:name=".SearchSingerActivity" />
+        <activity android:name=".SearchLrcActivity" />
+        <activity android:name=".TimerPowerOffActivity" />
+
+        <service android:name="com.zlm.hp.service.FloatService" />
+
+        <activity
+            android:name=".LockActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.zlm.lockscreen"
+            android:theme="@style/LockScreenTheme" />
+        <activity android:name=".ToolActivity" />
+        <activity android:name=".tool.LrcConverterActivity" />
+        <activity android:name=".tool.FileManagerActivity" />
+        <activity android:name=".MakeLrcSettingActivity" />
+        <activity
+            android:name=".tool.MakeLrcActivity"
+            android:theme="@style/MakeLrcTheme" />
+        <activity
+            android:name=".tool.MakeTranslateLrcActivity"
+            android:theme="@style/MakeLrcTheme" />
+        <activity
+            android:name=".tool.MakeTransliterationLrcActivity"
+            android:theme="@style/MakeLrcTheme" />
+        <activity android:name=".tool.LrcMakerActivity" />
+        <activity
+            android:name=".SearchMVActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation" />
+        <activity
+            android:name=".VideoActivity"
+            android:screenOrientation="landscape"></activity>
+    </application>
+
+</manifest>

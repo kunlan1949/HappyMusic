@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/skin_menu_bg"
+    tools:context="com.zlm.hp.ui.MainActivity">
+
+    <com.zlm.libs.widget.SlidingMenuLayout
+        android:id="@+id/slidingMenuLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.zlm.libs.widget.SlidingMenuLayout>
+
+    <ViewStub
+        android:id="@+id/viewstub_main_pop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/layout_pop_playlist"></ViewStub>
+
+    <LinearLayout
+        android:id="@+id/playerBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bar_height"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <com.zlm.hp.widget.DividerView
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <include layout="@layout/layout_playbar" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
